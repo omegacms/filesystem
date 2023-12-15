@@ -27,7 +27,7 @@ use RuntimeException;
  * Unsupported driver exception class.
  *
  * @category    Omega
- * @package     FrameworkFilesystem
+ * @package     Omega\Filesystem
  * @subpackage  Omega\Filesystem\Exception
  * @link        https://omegacms.github.com
  * @author      Adriano Giovannini <omegacms@outlook.com>
