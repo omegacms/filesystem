@@ -27,6 +27,10 @@ use League\Flysystem\FilesystemException;
 /**
  * Abstract filesystem adapter class.
  *
+ * This `AbstractFilesystemAdapter` class serves as a foundation for implementing specific filesystem adapters
+ * by providing a consistent interface for common operations such as listing contents, checking existence,
+ * reading, writing, and deleting files, as well as establishing a connection to the filesystem.
+ *
  * @category    Omega
  * @package     Omega\Filesystem
  * @subpackage  Omega\Filesystem\Adapter
@@ -48,14 +52,14 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     /**
      * Config array.
      *
-     * @var array $config Holds an array of config.
+     * @var array $config Holds an array of configiguration options.
      */
     protected array $config = [];
 
     /**
      * AbstractFilesystemAdapter class constructor.
      *
-     * @param  array $config Holds an array of config.
+     * @param  array $config Holds an array of configuration options.
      * @return void
      */
     public function __construct( array $config )
@@ -66,12 +70,12 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     }
 
     /**
-     * List the filesystem content.
+     * @inheritdoc
      *
-     * @param  string $path      Holds the filesystem path.
-     * @param  bool   $recursive Flag for determine recursion.
-     * @return iterable Return an instance of iterable.
-     * @throws FilesystemException
+     * @param  string $path      Holds the path within the filesystem.
+     * @param  bool   $recursive Whether to list recursively or not.
+     * @return iterable Returns an iterable representing the filesystem content.
+     * @throws FilesystemException If an error occurs during the operation.
      */
     public function list( string $path, bool $recursive = false ) : iterable
     {
@@ -79,11 +83,11 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     }
 
     /**
-     * Determine if the filesystem exists.
+     * @inheritdoc
      *
-     * @param  string $path Holds the filesystem path.
-     * @return bool Return true if the filesystem exists, false if not.
-     * @throws FilesystemException
+     * @param  string $path Holds the path to check.
+     * @return bool Returns true if the path exists, false otherwise.
+     * @throws FilesystemException If an error occurs during the operation.
      */
     public function exists( string $path ) : bool
     {
@@ -91,11 +95,11 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     }
 
     /**
-     * Get from filesystem.
+     * @inheritdoc
      *
-     * @param  string $path Holds the filesystem path.
-     * @return string Return the filesystem.
-     * @throws FilesystemException
+     * @param  string $path Holds the path to the file.
+     * @return string Returns the contents of the file.
+     * @throws FilesystemException If an error occurs during the operation.
      */
     public function get( string $path ) : string
     {
@@ -103,12 +107,12 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     }
 
     /**
-     * Put on filesystem
+     * @inheritdoc
      *
-     * @param  string $path  Holds the filesystem path.
-     * @param  mixed  $value Holds the value to put in the filesystem.
+     * @param  string $path  Holds the path to the file.
+     * @param  mixed  $value Holds the content to put into the file.
      * @return $this
-     * @throws FilesystemException
+     * @throws FilesystemException If an error occurs during the operation.
      */
     public function put( string $path, mixed $value ) : static
     {
@@ -118,11 +122,11 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     }
 
     /**
-     * Delete from the filesystem.
+     * @inheritdoc
      *
-     * @param  string $path Holds the filesystem path.
+     * @param  string $path Holds the path to the file or directory.
      * @return $this
-     * @throws FilesystemException
+     * @throws FilesystemException If an error occurs during the operation.
      */
     public function delete( string $path ) : static
     {
@@ -132,7 +136,7 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     }
 
     /**
-     * Connect to the filesystem.
+     * @inheritdoc
      *
      * @return void
      */

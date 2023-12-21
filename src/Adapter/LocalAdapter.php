@@ -27,6 +27,10 @@ use League\Flysystem\Local\LocalFilesystemAdapter;
 /**
  * Local filesystem driver.
  *
+ * The `LocalAdapter` class represents a filesystem adapter designed for local storage using Flysystem.
+ * It extends the abstract filesystem adapter, providing specific implementation details to connect to
+ * the local filesystem using Flysystem's LocalFilesystemAdapter.
+ *
  * @category    Omega
  * @package     Omega\Filesystem
  * @subpackage  Omega\Filesystem\Adapter
@@ -39,7 +43,7 @@ use League\Flysystem\Local\LocalFilesystemAdapter;
 class LocalAdapter extends AbstractFilesystemAdapter
 {
     /**
-     * Connect to the filesystem.
+     * @inheritdoc
      *
      * @return void
      */

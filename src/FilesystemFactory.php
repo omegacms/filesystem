@@ -29,6 +29,10 @@ use Omega\ServiceProvider\ServiceProviderInterface;
 /**
  * Filesystem factory class.
  *
+ * This `FilesystemFactory` class serves as a factory for creating instances of filesystem adapters
+ * based on provided configurations. It allows for the registration of custom filesystem drivers through
+ * a flexible and extensible API.
+ *
  * @category    Omega
  * @package     Omega\Filesystem
  * @link        https://omegacms.github.com
@@ -40,17 +44,17 @@ use Omega\ServiceProvider\ServiceProviderInterface;
 class FilesystemFactory implements ServiceProviderInterface
 {
     /**
-     * Drivers array.
+     * Array of registered filesystem drivers.
      *
      * @var array $drivers Holds an array of drivers.
      */
     protected array $drivers;
 
     /**
-     * Add driver.
+     * Register a new filesystem driver.
      *
      * @param  string  $alias  Holds the driver alias.
-     * @param  Closure $driver Holds an instance of Closure.
+     * @param  Closure $driver Holds a Closure that returns an instance of the filesystem adapter.
      * @return $this
      */
     public function register( string $alias, Closure $driver ) : static
@@ -61,11 +65,11 @@ class FilesystemFactory implements ServiceProviderInterface
     }
 
     /**
-     * Connect the driver.
+     * @inheritdoc
      *
-     * @param  array $config Holds an array of configuration.
-     * @return mixed
-     * @throws UnsupportedFilesystemException if the filesystem is not defined or unrecognised.
+     * @param  array $config Holds an array of configuration for the filesystem.
+     * @return AbstractFilesystemAdapter Returns an instance of the filesystem adapter.
+     * @throws UnsupportedFilesystemException if the filesystem type is not defined or unrecognised.
      */
     public function bootstrap( array $config ) : AbstractFilesystemAdapter
     {

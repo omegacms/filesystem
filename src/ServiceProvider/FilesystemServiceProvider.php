@@ -29,6 +29,9 @@ use Omega\ServiceProvider\ServiceProviderInterface;
 /**
  * Filesystem service provider class.
  *
+ * The `FilesystemServiceProvider` class is the service provider for
+ * filesystem package.
+ *
  * @category    Omega
  * @package     Omega\Filesystem
  * @subpackage  Omega\Filesystem\ServiceProvider
@@ -41,7 +44,7 @@ use Omega\ServiceProvider\ServiceProviderInterface;
 class FilesystemServiceProvider extends AbstractServiceProvider
 {
     /**
-     * Get the service name.
+     * @inheritdoc
      *
      * @return string Return the service name.
      */
@@ -51,9 +54,9 @@ class FilesystemServiceProvider extends AbstractServiceProvider
     }
 
     /**
-     * Get the service factory.
+     * @inheritdoc
      *
-     * @return mixed
+     * @return mixed Returns an instance of the service factory.
      */
     protected function factory() : ServiceProviderInterface
     {
@@ -61,7 +64,7 @@ class FilesystemServiceProvider extends AbstractServiceProvider
     }
 
     /**
-     * Get drivers.
+     * @inheritdoc
      *
      * @return array Return an array of drivers for the service.
      */

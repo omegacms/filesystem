@@ -26,6 +26,8 @@ use RuntimeException;
 /**
  * Unsupported driver exception class.
  *
+ * The `UnsupportedFilesystemException` thrown when attempting to use an unsupported filesystem driver.
+ *
  * @category    Omega
  * @package     Omega\Filesystem
  * @subpackage  Omega\Filesystem\Exception
