@@ -27,7 +27,8 @@
     "psr-4": {
       "Omega\\Filesystem\\": "src/"
     },
-    "filess": [
+    "files": [
+      "src/function.php"
     ]
   },
   "autoload-dev": {
