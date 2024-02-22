@@ -32,7 +32,7 @@ composer require --prefer-source omegacms/filesystem "^1.0.0"
 
 ## Documentation
 
-Work progress
+Work in progress
 
 ## Contributing
 
