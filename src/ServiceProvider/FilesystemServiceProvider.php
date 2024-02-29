@@ -23,8 +23,8 @@ namespace Omega\Filesystem\ServiceProvider;
  */
 use Omega\Filesystem\FilesystemFactory;
 use Omega\Filesystem\Adapter\LocalAdapter;
-use Omega\ServiceProvider\AbstractServiceProvider;
-use Omega\ServiceProvider\ServiceProviderInterface;
+use Omega\Container\ServiceProvider\AbstractServiceProvider;
+use Omega\Container\ServiceProvider\ServiceProviderInterface;
 
 /**
  * Filesystem service provider class.

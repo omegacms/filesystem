@@ -24,7 +24,7 @@ namespace Omega\Filesystem;
 use Closure;
 use Omega\Filesystem\Adapter\AbstractFilesystemAdapter;
 use Omega\Filesystem\Exceptions\UnsupportedFilesystemException;
-use Omega\ServiceProvider\ServiceProviderInterface;
+use Omega\Container\ServiceProvider\ServiceProviderInterface;
 
 /**
  * Filesystem factory class.
