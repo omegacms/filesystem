@@ -52,7 +52,7 @@ abstract class AbstractFilesystemAdapter implements FilesystemAdapterInterface
     /**
      * Config array.
      *
-     * @var array $config Holds an array of configiguration options.
+     * @var array $config Holds an array of configuration options.
      */
     protected array $config = [];
 
