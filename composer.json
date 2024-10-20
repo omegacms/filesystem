@@ -1,0 +1,30 @@
+{
+  "name": "omegacms/filesystem",
+  "type": "package",
+  "description": "Omega CMS Filesystem Package",
+  "keywords": [ "omegacms", "framework", "filesystem"],
+  "homepage": "https://omegacms.github.io",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Adriano Giovannini",
+      "email": "omegacms@outlook.com",
+      "homepage": "https://omegacms.github.io",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "ext-fileinfo": "*",
+    "ext-ftp": "*",
+    "ext-zip": "*",
+    "omegacms/container": "^1.0.0",
+    "phpseclib/phpseclib": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Omega\\Filesystem\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
